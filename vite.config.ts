@@ -8,6 +8,6 @@ export default defineConfig({
     host: '0.0.0.0',
     cors: true,
   },
-  build: { outDir: '../views' },
+  build: { outDir: 'dist' },
 
 })
