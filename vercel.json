@@ -2,7 +2,6 @@
     "build": {
       "env": {
         "NODE_ENV": "production"
-      },
-      "installCommand": "yarn install"
+      }
     }
   }
