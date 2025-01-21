@@ -1,0 +1,217 @@
+.nour-grid.offers {
+  grid-gap: var(--min-gap);
+  padding-inline: var(--min-gap);
+  grid-template-columns: repeat(1, 250px);
+  align-content: center;
+  justify-content: center;
+  margin-top: var(--max-gap);
+  margin-bottom: calc(var(--max-gap) * 6);
+}
+
+.nour-grid.offers .offer {
+  border: 1px solid rgba($color: #000000, $alpha: .2);
+  border-radius: 15px;
+  width: 250px;
+  height: 300px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba($color: #000000, $alpha: 0.15);
+}
+
+.nour-grid.offers .offer:hover {
+  border: 1px solid rgba($color: #269b04, $alpha: .6);
+  box-shadow: 0 0 10px rgba($color: #269b04, $alpha: 0.55);
+}
+
+.nour-grid.offers .offer>* {
+  margin-inline: var(--min-gap);
+  margin-bottom: var(--min-gap);
+}
+
+.nour-grid.offers .offer img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  margin-inline: 0;
+}
+
+.nour-grid.offers .offer .note {
+  display: block;
+  min-height: 10px;
+}
+
+.nour-grid.offers .offer .name {
+  font-size: 1.3rem;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.nour-grid.offers .offer .price {
+  color: var(--color-secondary);
+}
+
+.detail {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.detail .view,
+.detail .like {
+  display: flex;
+  align-items: center;
+}
+
+.detail .icon img {
+  width: 24px !important;
+  height: 24px !important;
+}
+
+.detail button,
+.detail a {
+  font-size: .9rem;
+  color: var(--text-color-white);
+}
+
+@media (width >=500px) {
+  .nour-grid.offers {
+    grid-gap: var(--gap);
+    padding-inline: var(--gap);
+    grid-template-columns: repeat(2, 250px);
+  }
+}
+
+@media (width >=800px) {
+  .nour-grid.offers {
+    grid-gap: var(--max-gap);
+    padding-inline: var(--max-gap);
+    grid-template-columns: repeat(3, 250px);
+  }
+}
+
+@media (width >=1100px) {
+  .nour-grid.offers {
+    grid-gap: var(--max-gap);
+    padding-inline: var(--max-gap);
+    grid-template-columns: repeat(4, 250px);
+  }
+}
+
+// Offer detail
+// ------------------------------------------------------------
+
+.nour-grid.offer__detail {
+  grid-gap: var(--min-gap);
+  padding-inline: var(--min-gap);
+  grid-template-columns: 300px;
+  justify-content: center;
+  margin-block: var(--max-gap);
+  grid-gap: var(--max-gap);
+}
+
+@media (width > 400px) {
+  .nour-grid.offer__detail {
+    grid-template-columns: 290px 460px;
+  }
+}
+
+@media (width > 820px) {
+  .nour-grid.offer__detail {
+    grid-template-columns: 400px 400px;
+  }
+}
+
+// Part 1
+// ----------------------------------------------------------------
+.nour-grid.offer__detail .part1 {
+  align-content: center;
+  justify-items: center;
+}
+
+.nour-grid.offer__detail .part1 .img-viewer {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--max-gap);
+}
+
+.nour-grid.offer__detail .part1 .img-viewer img {
+  width: 300px;
+  height: 300px;
+  object-fit: contain;
+}
+
+.nour-grid.offer__detail .part1 .images {
+  display: flex;
+  justify-content: center;
+}
+
+.nour-grid.offer__detail .part1 .images div {
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  margin-inline: var(--gap);
+  width: 60px;
+  height: 60px;
+}
+
+.nour-grid.offer__detail .part1 .images img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.nour-grid.offer__detail .part1 .detail {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: var(--gap);
+}
+
+.nour-grid.offer__detail .part1 .social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--gap);
+}
+
+.nour-grid.offer__detail .part1 .social div {
+  margin-inline: var(--gap);
+}
+
+// Part 2
+// ----------------------------------------------------------------------------
+.nour-grid.offer__detail .part2 .name {
+  height: 70px;
+  margin-bottom: var(--gap);
+}
+
+.nour-grid.offer__detail .part2 ul li {
+  display: grid;
+  grid-template-columns: 24px 248px 128px;
+  height: 40px;
+}
+
+.nour-grid.offer__detail .part2 ul li span {
+  margin-block: auto;
+}
+
+.nour-grid.offer__detail .part2 ul li span:first-child {
+  width: 12px;
+  aspect-ratio: 1;
+  display: inline-block;
+  background: center / 12px url(http://192.168.56.1:3000/icon/arrow.png);
+
+}
+
+.nour-grid.offer__detail .part2 ul li span:last-child {
+  margin-left: auto;
+}
+
+.nour-grid.offer__detail .part2 button {
+  width: 100%;
+  padding: .5rem;
+  margin-top: var(--max-gap);
+  color: var(--text-color-white);
+}

@@ -1,0 +1,86 @@
+// Home Header
+// ----------------------------------------------------------------------
+.home__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-inline: 20px;
+}
+
+.home__header .logo a {
+  display: block;
+  width: 72px;
+  height: 72px;
+  background: center / 72px no-repeat url(http://192.168.56.1:3000/img/logo.png);
+}
+
+.home__header .logo a:hover {
+  filter: contrast(150%);
+}
+
+.header__nav {
+  display: none;
+}
+
+.header__nav .btn.btn-primary {
+  font-size: 1rem;
+  color: var(--color-white);
+}
+
+@media (width > 630px) {
+
+  .header__nav,
+  .header__nav>ul {
+    display: flex;
+    padding: 0;
+    align-items: center;
+  }
+
+  .header__nav ul li {
+    margin-inline-end: 20px;
+    list-style: none;
+  }
+
+  .nav_links li {
+    padding: .25rem .75rem;
+    border: transparent 1px solid;
+  }
+
+  .social__nav .ic_facebook {
+    display: block;
+    width: 24px;
+    height: 24px;
+    background: center / 24px no-repeat url(http://192.168.56.1:3000/icon/facebook.svg);
+  }
+
+  .social__nav .ic_twitter {
+    display: block;
+    width: 24px;
+    height: 24px;
+    background: center / 24px no-repeat url(http://192.168.56.1:3000/icon/twitter.svg);
+  }
+
+  .social__nav .ic_linkedin {
+    display: block;
+    width: 24px;
+    height: 24px;
+    background: center / 24px no-repeat url(http://192.168.56.1:3000/icon/linkedin.svg);
+  }
+
+  .social__nav li div {
+    cursor: pointer;
+  }
+
+  .nav_links li:hover {
+    color: var(--color-primary);
+    border: var(--color-primary) 1px solid;
+    border-radius: 3px;
+  }
+
+  .nav_links li.active {
+    color: #FFF;
+    border: var(--color-primary) 1px solid;
+    border-radius: 3px;
+    background: linear-gradient(0deg, var(--color-primary), var(--color-primary-light));
+  }
+}

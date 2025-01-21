@@ -1,0 +1,48 @@
+// Home footer
+// ----------------------------------------------------------
+.home__footer {
+  background: var(--color-black);
+  color: var(--color-white);
+  padding-top: var(--max-gap);
+}
+
+.home__footer .nour-grid {
+  grid-template-columns: repeat(2, 1fr);
+  align-content: center;
+  justify-content: center;
+  padding: var(--min-gap);
+  grid-gap: var(--min-gap);
+}
+
+@media (width > 540px) {
+  .home__footer .nour-grid {
+    grid-gap: var(--max-gap);
+    padding: var(--max-gap);
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.home__footer .nour-grid .grid-el {
+  margin-inline: auto;
+}
+
+.home__footer .nour-grid .grid-el h1 {
+  font-size: 1.5rem;
+  margin-bottom: var(--gap);
+}
+
+.home__footer .nour-grid .grid-el ul li {
+  margin-bottom: var(--min-gap);
+  color: var(--text-color-white);
+}
+
+.home__footer hr {
+  margin-bottom: var(--max-gap);
+}
+
+
+.home__footer span {
+  text-align: center;
+  height: 50px;
+  display: block;
+}
