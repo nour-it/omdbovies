@@ -1,0 +1,188 @@
+
+// Section 1
+// -----------------------------------------------------------------------
+
+.home__caroussel {
+  min-height: 300px;
+  max-height: 350px;
+  background: linear-gradient(var(--color-secondary), var(--color-secondary-light));
+  display: grid;
+  grid-template-columns: 60px 1fr 60px;
+}
+
+@media (width > 375px) {
+  .home__caroussel {
+    grid-template-columns: 100px 1fr 100px;
+  }
+}
+
+.home__caroussel button.arrow {
+  width: 48px;
+  aspect-ratio: 1;
+  margin-inline: auto;
+  margin-block: auto;
+  outline: none;
+  border: none;
+  border-radius: 50%;
+  background: center / 24px url(http://192.168.56.1:3000/icon/arrow.png) no-repeat var(--color-white);
+}
+
+.home__caroussel button.arrow:first-child {
+  transform: rotate(180deg);
+}
+
+.home__caroussel .info {
+  display: flex;
+  align-items: center;
+}
+
+.home__caroussel {
+  color: var(--text-color-white);
+}
+
+.home__caroussel .info .info__image {
+  flex: 300px;
+}
+
+.home__caroussel .info .info__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  padding-block: var(--gap);
+}
+
+.home__caroussel .info .info__content .title {
+  font-size: 4rem;
+  color: var(--color-white);
+}
+
+.home__caroussel .info .info__content button {
+  width: 150px;
+  color: var(--color-white);
+}
+
+// Modal
+// ---------------------------------------------
+
+.modal {
+  position: fixed;
+  top: 0;
+  z-index: 10px;
+  background: var(--modal-bg);
+  width: calc(100vw - 5px);
+  height: calc(100vh);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(5px);
+}
+
+.modal .modal__body {
+  width: calc(100vw - 100px);
+  height: calc(100vh - 50px);
+  background: var(--color-white);
+  border-radius: 10px;
+  animation: showModal 100ms linear;
+}
+
+@keyframes showModal {
+  from {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// section 2
+// ----------------------------------------------------------------------
+.home.section2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.home.section2>div:first-child {
+  height: 100px;
+  background: var(--text-color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.home.section2>div:last-child {
+  width: 100%;
+  background: center 200px / contain url(http://192.168.56.1:3000/img/map.png) no-repeat;
+}
+
+.home.section2>div:last-child>* {
+  text-align: center;
+  margin-block: calc(var(--gap) * 2);
+}
+
+// First Grid of Section 1
+.home.section2 .nour-grid.pays .grid-el div {
+  width: 150px;
+  height: 100px;
+  background: var(--color-white);
+  box-shadow: 0 0 20px rgba($color: #000000, $alpha: 0.2);
+  border-radius: 15px;
+  margin-inline: auto;
+  padding: var(--min-gap);
+}
+
+.home.section2 .nour-grid.pays .grid-el div img {
+  width: 100px;
+  height: 50px;
+  object-fit: contain;
+}
+
+.home.section2 .nour-grid.pays {
+  grid-template-columns: repeat(2, 1fr);
+  grid-row-gap: var(--max-gap);
+}
+
+@media (width > 630px) {
+  .home.section2 .nour-grid.pays .grid-el div {
+    width: 200px;
+    height: 150px;
+  }
+  .home.section2 .nour-grid.pays .grid-el div img {
+    width: 120px;
+    height: 100px;
+  }
+  .home.section2 .nour-grid.pays {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (width > 820px) {
+  .home.section2 .nour-grid.pays {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (width >= 1115px) {
+  .home.section2 .nour-grid.pays {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+.home.section2 .nour-grid.pays .grid-el {
+}
+
+// Second grid of Section 2
+.home.section2>div:last-child>div:last-child {
+  margin-top: calc(var(--gap) * 4);
+}
+
+.home.section2 .nour-grid.stats {
+  grid-template-columns: repeat(4, 1fr);
+  background: rgba($color: #000000, $alpha: .2);
+  padding-block: var(--max-gap);
+}

@@ -1,0 +1,54 @@
+.auth__login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.login__form {
+  display: flex;
+    flex-direction: column;
+    align-items: center;
+  width: 500px;
+  height: 600px;
+  padding: var(--max-gap);
+  border: 1px solid rgba($color: #000000, $alpha: .1);
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba($color: #000000, $alpha: 0.15);
+}
+
+.login__form img {
+  width: 168px;
+  height: 168px;
+  object-fit: contain;
+  margin-top: -50px;
+}
+
+.login__form .form-row .form-group {
+  width: 380px;
+}
+
+.social__login {
+  width: 380px;
+  display: flex;
+  align-items: center;
+  border: 1px solid rgba($color: #000000, $alpha: .1);
+  border-radius: 5px;
+  margin-top: var(--gap);
+  cursor: pointer;
+}
+
+.social__login .icon {
+  width: 48px;
+  height: 48px;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social__login .icon img {
+  margin: 0;
+  width: 24px;
+  height: 24px;
+}
