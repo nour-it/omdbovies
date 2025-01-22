@@ -10,18 +10,18 @@ import { Provider } from 'react-redux';
 import store from './store';
 import App from './App';
 import "./App.css"
-
+import "./var.scss"
 
 // const router = createBrowserRouter(routeObject);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
+  <>
     {/* <GoogleOAuthProvider clientId="569553056609-ifbb1uv071bd4hp87mjcatvmlcca3pqk.apps.googleusercontent.com"> */}
     <Provider store={store}>
       <App />
     </Provider>
     {/* </GoogleOAuthProvider> */}
-  </React.StrictMode>
+  </>
 );
 

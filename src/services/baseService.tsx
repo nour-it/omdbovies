@@ -1,14 +1,14 @@
 import axios from "axios";
 
 export default class BaseService {
-  entryPoint = window.location.protocol + "//" + window.location.hostname + ":8000";
+  entryPoint = import.meta.env.VITE_API_ENDPOINT + import.meta.env.VITE_API_KEY;
   // entryPoint = window.location.origin
 
   static service;
 
-  defaultConfig = { headers: { 'X-Requested-With': "XMLHttpRequest" } }
+  defaultConfig = { headers: { 'Accept': "Application/json" } }
   config = {}
-  authConfig = { headers: { 'X-Requested-With': "XMLHttpRequest", "Authorization": "Bearer " + localStorage.getItem("token") } }
+  authConfig = { headers: { 'Accept': "Application/json", "Authorization": "Bearer " + localStorage.getItem("token") } }
 
   static getService() {
     if (!this.service) {
@@ -22,13 +22,13 @@ export default class BaseService {
   }
 
   async get(url, auth = false) {
-    console.log(url);
+    import.meta.env.DEV && console.log(url);
     this.config = auth ? this.authConfig : this.defaultConfig;
     return await axios.get(url, this.config)
   }
 
   async post(url, data, auth = false) {
-    console.log(url);
+    import.meta.env.DEV && console.log(url);
     this.config = auth ? this.authConfig : this.defaultConfig;
     return axios.post(url, data, this.config)
   }

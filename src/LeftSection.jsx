@@ -1,17 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { URLS } from './utils/url'
-import Service from './utils/service'
-import useStore from './utils/store'
 
 function LeftSection({ socket }) {
 
-    const [bots, setBots, addBot] = useStore((state) => [state.bots, state.setBots, state.addBot])
-
     async function onMounted() {
-        setBots(await Service.getBots())
         try {
-           
         } catch (error) { console.log(error) }
         return () => { socket?.disconnect(); };
     }

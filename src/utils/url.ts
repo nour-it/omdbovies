@@ -2,12 +2,10 @@ import { useEffect, useRef } from "react";
 import { useLocation } from "react-router-dom";
 
 export let URLS = {
-  home       : "/",
-  member     : "/member/:id",
-  groups     : "/groups/:id",
-  message    : "/message/:id",
-  profile    : "/profile/:id",
-  codeScanner: "/qrcodescanner",
+  home: "/",
+  moviesHome: "/movies",
+  moviePreveiw: (id) => `/movies/${id}`,
+  login: "/login",
 }
 
 export const usePreviousUrl = () => {

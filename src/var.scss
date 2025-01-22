@@ -1,23 +1,7 @@
-$bg: red red;
+$colors: gray, red;
+
 :root {
-  --color-black: #010314;
-  --color-white: #FFFFFF;
-  --text-color-white: #bfbfbf;
-  --text-color-black: #0c0f29;
-  --color-primary: #269B04;
-  --color-primary-light: #1f6a08;
-  --color-secondary: #a90011;
-  --color-secondary-light: #dc3545;
-  --color-third: #0075ff;
-  --min-gap: 10px;
-  --gap: 20px;
-  --max-gap: 30px;
-  --input-bg: #5c5c5c;
-  --modal-bg: #01031463;
-  scroll-behavior: smooth;
-  --box-width: 100px;
-  --spinner-width: 10px;
-  --spinner-duration: 500ms;
+  
 }
 
 *,
@@ -28,30 +12,33 @@ $bg: red red;
   box-sizing: border-box;
 }
 
-@font-face {
-  font-family: nova;
-  src: url("../public/font/nova_bold.ttf") format("truetype");
-  font-weight: bold;
+
+$fonts: Medium, Bold, Regular;
+
+@each $font in $fonts {
+  @font-face {
+    font-family: dm_sans;
+    src: url("../public/font/DM_Sans/static/DMSans-#{$font}.ttf") format("truetype");
+    font-weight: #{$font};
+  }
 }
 
-@font-face {
-  font-family: nova;
-  src: url("../public/font/nova_reg.ttf") format("truetype");
-  font-weight: lighter;
-}
 
 body {
-  filter: blur(0.45px);
+  // filter: blur(0.45px);
   min-height: 100vh;
+  font-family: dm_sans;
+  font-size: 1rem;
+  line-height: 1.5rem;
 }
 
-body::-webkit-scrollbar {
-  width: 5px;
-  height: 5px;
+*::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
   background-color: var(--color-black);
 }
 
-body::-webkit-scrollbar-thumb {
+*::-webkit-scrollbar-thumb {
     background: var(--color-primary);
     border-radius: 3px;
 }
