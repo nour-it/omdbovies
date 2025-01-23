@@ -2,6 +2,7 @@ import React from 'react'
 import ContentLoader from 'react-content-loader';
 import { Link } from 'react-router-dom';
 import { URLS } from '../../../../utils/url';
+import { useSelector } from 'react-redux';
 /* 
 {Title: 'Run All Night', Year: '2015', imdbID: 'tt2199571', Type: 'movie', Poster: 'https://m.media-amazon.com/images/M/MV5BMTU2ODI3ODEyOV5BMl5BanBnXkFtZTgwMTM3NTQzNDE@._V1_SX300.jpg'}
 */
@@ -9,13 +10,20 @@ import { URLS } from '../../../../utils/url';
 
 function Movies({ moviesStore }) {
   let movies = moviesStore.movies;
+  
   if (movies.length == 0) {
     movies = [{ id: "0" }, { id: "1" }, { id: "2" }, { id: "3" }];
   }
+
+  
+  movies = movies.filter((m) => (new RegExp(moviesStore.filter.categories.join("|"), "i")).test(m.Genre));
+
+  console.log(movies)
+
   return (
     <div className='container mx-auto p-4 flex flex-col gap-[30px]'>
       <h2>Movies</h2>
-      <div className="flex gap-[80px] w-[100%] justify-center" style={{ overflowX: "scroll" }}>
+      <div className="flex gap-[80px] w-[100%]" style={{ overflowX: "scroll" }}>
         {movies.map(Movie)}
       </div>
     </div>

@@ -27,8 +27,9 @@ function App() {
         <BrowserRouter basename="/">
             <Suspense fallback={<div>Loading...</div>}>
                 <Routes>
-                    <Route path={URLS.home} element={<HomePage socket={socket}/>} />
-                    <Route path={URLS.moviePreveiw(":id")} element={<PreviewPage socket={socket}/>} />
+                    <Route path={URLS.home} element={<HomePage socket={socket} />} />
+                    <Route path={URLS.moviePreveiw(":id")} element={<PreviewPage socket={socket} />} />
+                    <Route path="*" element={<HomePage socket={socket} />} />
                 </Routes>
             </Suspense>
         </BrowserRouter>

@@ -28,7 +28,6 @@ function HomePage({ socket }) {
         // }
     }
 
-
     useEffect(() => {
         moviesService.getMovies().then((data) => {
             dispatch(addMovies(data))
@@ -40,8 +39,6 @@ function HomePage({ socket }) {
             document.removeEventListener("scroll", onScroll)
         }
     }, [])
-
-    console.log(moviesStore)
 
     return (
         <>

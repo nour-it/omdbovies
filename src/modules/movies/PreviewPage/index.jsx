@@ -6,7 +6,8 @@ import Footer from './sections/Footer'
 import { useDispatch, useSelector } from 'react-redux'
 import MoviesService from '../../../services/moviesService'
 import { addMovies } from '../../../store/moviesStore'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
+import { URLS } from '../../../utils/url'
 
 function PreviewPage({ socket }) {
     const [state, setState] = useState({ mounted: false, souscriptionModal: false })
@@ -15,7 +16,7 @@ function PreviewPage({ socket }) {
     const dispatch = useDispatch()
 
     const moviesService = MoviesService.getMoviesService();
-
+    const navigate = useNavigate();
     const { id } = useParams();
 
     const onScroll = async (e) => {
@@ -43,9 +44,16 @@ function PreviewPage({ socket }) {
         }
     }, [])
 
+    let movie = moviesStore.movies.find(m => m.imdbID == id)
+
+    if(!movie) {
+        navigate(URLS.home)
+        return
+    }
+
     return (
         <>
-            <Header movie={moviesStore.movies.find(m => m.imdbID == id)}/>
+            <Header movie={movie}/>
             <Filters moviesStore={moviesStore} />
             <Movies moviesStore={moviesStore} />
             <Footer />
